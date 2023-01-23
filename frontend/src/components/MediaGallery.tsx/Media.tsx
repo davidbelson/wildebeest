@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import Image from './ImageGallery'
+import Image from './Image'
 import Video from './Video'
 import { MediaAttachment } from '~/types'
 
@@ -10,9 +10,8 @@ type Props = {
 export default component$<Props>(({ mediaAttachment }) => {
 	return (
 		<>
-			{mediaAttachment.type}
-			{/* {mediaAttachment.type === 'image' ? <Image mediaAttachment={mediaAttachment} /> : ''}
-			{mediaAttachment.type === 'video' ? <Video mediaAttachment={mediaAttachment} /> : ''} */}
+			{mediaAttachment.type === 'image' ? <Image mediaAttachment={mediaAttachment} /> : ''}
+			{mediaAttachment.type === 'video' ? <Video mediaAttachment={mediaAttachment} /> : ''}
 		</>
 	)
 })

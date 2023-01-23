@@ -2,9 +2,9 @@ import { component$, $, useStyles$ } from '@builder.io/qwik'
 import { Link, useNavigate } from '@builder.io/qwik-city'
 import { formatTimeAgo } from '~/utils/dateTime'
 import { Avatar } from '../avatar'
-import Media from './Media'
 import type { Account, MastodonStatus } from '~/types'
 import styles from './index.scss?inline'
+import { MediaGallery } from '../MediaGallery.tsx'
 
 type Props = {
 	status: MastodonStatus
@@ -48,9 +48,7 @@ export default component$((props: Props) => {
 				<div class="leading-relaxed status-content" dangerouslySetInnerHTML={status.content} />
 			</div>
 
-			{status.media_attachments.map((attachment) => (
-				<Media mediaAttachment={attachment} />
-			))}
+			<MediaGallery medias={status.media_attachments} />
 
 			{status.card && status.media_attachments.length === 0 && (
 				<a class="no-underline" href={status.card.url}>
