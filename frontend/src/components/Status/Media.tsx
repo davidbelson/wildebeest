@@ -10,8 +10,9 @@ type Props = {
 export default component$<Props>(({ mediaAttachment }) => {
 	return (
 		<>
-			{mediaAttachment.type === 'image' ? <Image mediaAttachment={mediaAttachment} /> : ''}
-			{mediaAttachment.type === 'video' ? <Video mediaAttachment={mediaAttachment} /> : ''}
+			{mediaAttachment.type}
+			{/* {mediaAttachment.type === 'image' ? <Image mediaAttachment={mediaAttachment} /> : ''}
+			{mediaAttachment.type === 'video' ? <Video mediaAttachment={mediaAttachment} /> : ''} */}
 		</>
 	)
 })

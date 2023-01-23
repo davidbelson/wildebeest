@@ -52,7 +52,7 @@ export default component$((props: Props) => {
 				<Media mediaAttachment={attachment} />
 			))}
 
-			{status.card && status.media_attachments.length == 0 && (
+			{status.card && status.media_attachments.length === 0 && (
 				<a class="no-underline" href={status.card.url}>
 					<div class="rounded flex border border-wildebeest-600">
 						<img class="w-16 h-16" src={status.card.image} />
